@@ -33,8 +33,8 @@ export default function App() {
           <tr>
             <td>{current.name}</td>
             <td>{current.price}</td>
-            <td className="edit">Edit</td>
-            <td className="del">Delete</td>
+            <td className="btn edit">Edit</td>
+            <td className="btn del">Delete</td>
           </tr>
           ;
         </table>
