@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
-import Blog from './Blog';
+import Nav from './Nav'
 import { BrowserRouter } from 'react-router-dom';
 
 export default function App() {
@@ -28,6 +28,7 @@ export default function App() {
   console.log(lists);
   return (
     <div className="crud">
+      <Nav/>
       {lists.map((current) => (
         <table>
           <tr>
