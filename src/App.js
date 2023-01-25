@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './style.css';
 import Nav from './Nav'
 import { BrowserRouter } from 'react-router-dom';
+import AddList from './components/AddList'
 
 export default function App() {
   const list = [
@@ -28,7 +29,7 @@ export default function App() {
   console.log(lists);
   return (
     <div className="crud">
-      <Nav/>
+      <AddList/>
       {lists.map((current) => (
         <table>
           <tr>
