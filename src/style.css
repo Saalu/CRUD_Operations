@@ -16,6 +16,7 @@ table td {
 
 .btn {
   border-radius: 5px;
+  cursor: pointer;
 }
 
 input {
@@ -30,7 +31,6 @@ button {
   background-color: rgb(7, 168, 7);
   color: white;
   height: 26px;
-
   padding: 3px;
   width: 50px;
   cursor: pointer;

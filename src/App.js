@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './style.css';
-import Nav from './Nav'
+import Nav from './Nav';
 import { BrowserRouter } from 'react-router-dom';
-import AddList from './components/AddList'
+import AddList from './components/AddList';
 
 export default function App() {
   const list = [
@@ -23,24 +23,24 @@ export default function App() {
     },
   ];
 
-  const numbers = [1, 2, 3, 4, 5];
+  const [lists, setLists] = useState(list);
 
-  const [lists, setList] = useState(list);
-  console.log(lists);
   return (
     <div className="crud">
-      <AddList/>
-      {lists.map((current) => (
+      <AddList setLists={setLists} />
+      {lists.map((item) => (
+
         <table>
           <tr>
-            <td>{current.name}</td>
-            <td>{current.price}</td>
+            <td>{item.name}</td>
+            <td>{item.price}</td>
             <td className="btn edit">Edit</td>
             <td className="btn del">Delete</td>
           </tr>
           ;
         </table>
-      ))}
+      )
+      )}
     </div>
   );
 }
