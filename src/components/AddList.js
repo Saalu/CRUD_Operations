@@ -1,25 +1,45 @@
 import React, { useState, useEffect } from 'react';
 
 const AddForm = ({ setLists }) => {
+  const [item, setItem] = useState({
+    id: '',
+    name: '',
+    price: '',
+  });
+
   function handleSubmit(e) {
     e.preventDefault();
-    const name = e.target.elements.name.value;
-    const price = e.target.elements.price.value;
-    const newlist = {
-      id: 3,
-      name,
-      price,
-    };
+
+    // const newlist = {
+    //   id: 3,
+    //   name,
+    //   price,
+    // };
 
     setLists((prev) => {
       return prev.concat(newlist);
     });
   }
 
+  const add = (e) => {
+    setItem({ [e.target.name]: e.target.value });
+  };
   return (
     <form className="" onSubmit={handleSubmit}>
-      <input type="text" name="name" placeholder="Enter Name" />
-      <input type="text" name="price" placeholder="Enter Price" />
+      <input
+        type="text"
+        name="name"
+        value={item.name}
+        onChange={add}
+        placeholder="Enter Name"
+      />
+      <input
+        type="text"
+        name="price"
+        value={item.price}
+        onChange={add}
+        placeholder="Enter Price"
+      />
       <button type="submit"> Add</button>
     </form>
   );
