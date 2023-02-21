@@ -29,8 +29,12 @@ export default function App() {
     <div className="crud">
       <AddList setLists={setLists} />
       {lists.map((item) => (
-
         <table>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
           <tr>
             <td>{item.name}</td>
             <td>{item.price}</td>
@@ -39,8 +43,7 @@ export default function App() {
           </tr>
           ;
         </table>
-      )
-      )}
+      ))}
     </div>
   );
 }
